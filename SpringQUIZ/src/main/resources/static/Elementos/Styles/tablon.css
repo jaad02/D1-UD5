@@ -1,0 +1,94 @@
+body {
+    background: linear-gradient(120deg, #f3f4f6, #d4d7dd);
+    color: #333333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenedor {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.jugador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jugador:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    background-color: #4CAF50;
+    color: #4CAF50;
+
+}
+
+.jugador h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1f2937;
+
+}
+
+.jugador div {
+    font-size: 1.2rem;
+    color: #4b5563;
+}
+
+#volver {
+    margin-top: 20px;
+}
+
+#volver a {
+    text-decoration: none;
+}
+
+#volver button {
+    background: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#volver button:hover {
+    background: #2da331;
+    transform: scale(1.05);
+}
+
+#volver button:active {
+    transform: scale(0.95);
+}
+#eliminar{
+    border-radius: 10px;
+    background-color: red;
+    height: 80%;
+}
+#editar{
+    border-radius: 10px;
+    background-color: yellow;
+}

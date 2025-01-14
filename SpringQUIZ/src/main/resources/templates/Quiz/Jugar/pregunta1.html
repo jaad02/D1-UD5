@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/Elementos/Styles/pregunta.css">
+</head>
+
+<body>
+<div class="contenedor" >
+    <div id="menu" th:with="preguntas=${session.get('pregunta')}" >
+       <div th:each="i : ${#numbers.sequence(1,preguntas+1)}" th:text="${i}" class="hecho"></div>
+        <div th:each="i : ${#numbers.sequence(preguntas+2,7)}" th:text="${i}"></div>
+
+    </div>
+    <div id="imagen" style="    background-image: url('/Elementos/Imagenes/Mundial2018.png');
+    "></div>
+    <div id="pregunta">
+        <h1>¿Quién ganó la Copa del Mundo de la FIFA en 2018?</h1>
+    </div>
+    <div id="opciones">
+        <form id="respuesta" action="/Quiz/Jugar/pregunta2" method="post">
+
+
+
+                <button type="submit"  name="seleccion" value="Francia" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8wDYYC1sEZiJYA2Mu3CSIkLul7kyjmSRBQ&s')">Francia</button>
+                <button type="submit" name="seleccion"  value="Brasil" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/300px-Flag_of_Brazil.svg.png');">Brasil</button>
+                <button type="submit" name="seleccion"  value="Alemania" style="background-image: url('https://fieltrosolleros.com/cdn/shop/products/Alemania_d655706d-0cd5-45cb-9db4-9401a772c2a3_1080x.jpg?v=1616779088');">Alemania</button>
+                <button type="submit" name="seleccion" value="Portugal" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1200px-Flag_of_Portugal.svg.png')">Portugal</button>
+
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

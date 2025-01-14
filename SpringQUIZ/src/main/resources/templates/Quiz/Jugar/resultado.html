@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" th:with="categoria=${session.get('categoria')}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:if="${categoria} == FC_NEGREIRA" href="/Elementos/Styles/barca.css" rel="stylesheet">
+    <link th:if="${categoria} == CLUB_DEL_PUEBLO" href="/Elementos/Styles/atleti.css" rel="stylesheet">
+   <link  th:if="${categoria} == LOS_SEGUNDONES" href="/Elementos/Styles/atleti.css" rel="stylesheet">
+    <link th:if="${categoria} == LOS_REYES_DE_EUROPA" href="/Elementos/Styles/realMadrid.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="contenedor" >
+
+
+    <div id="pregunta">
+        <h1>Quiz completado,tu puntuacion:
+            <br>
+            <span th:text="${session.get('puntuacion')}" th:classappend="${session.get('puntuacion')==0} ? 'baja-puntuacion' : 'alta-puntuacion'"></span>
+        CR7 Points
+        </h1>
+    </div>
+    <div id="mensaje" >
+
+        <h1 th:if="${categoria} == FC_NEGREIRA">FC Negreira</h1>
+        <h1 th:if="${categoria} == CLUB_DEL_PUEBLO">Club del pueblo</h1>
+        <h1 th:if="${categoria} == LOS_SEGUNDONES">Los segundones</h1>
+        <h1 th:if="${categoria} == LOS_REYES_DE_EUROPA">Los reyes de Europa</h1>
+<h1></h1>
+    </div>
+    <div th:if="${categoria} == FC_NEGREIRA" id="imagen" style="    background-image: url('/Elementos/Imagenes/Equipos/barca.png');"></div>
+    <div th:if="${categoria} == CLUB_DEL_PUEBLO" id="imagen" style="    background-image: url('/Elementos/Imagenes/Equipos/MAT.png');"></div>
+    <div th:if="${categoria} == LOS_SEGUNDONES" id="imagen" style="    background-image: url('/Elementos/Imagenes/Equipos/atleti.png');"></div>
+    <div th:if="${categoria} == LOS_REYES_DE_EUROPA" id="imagen" style="    background-image: url('/Elementos/Imagenes/Equipos/realMadrid.png');"></div>
+
+
+
+
+    <form id="volver" action="/">
+        <button type="submit">Volver</button>
+
+    </form>
+</div>
+
+</body>
+</html>

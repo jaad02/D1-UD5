@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/Elementos/Styles/pregunta.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="contenedor">
+    <div id="menu" th:with="preguntas=${session.get('pregunta')}" >
+        <div th:each="i : ${#numbers.sequence(1,preguntas+1)}" th:text="${i}" class="hecho"></div>
+        <div th:each="i : ${#numbers.sequence(preguntas+2,7)}" th:text="${i}"></div>
+
+    </div>
+    <div id="imagen" style="    background-image: url('/Elementos/Imagenes/champion.png');
+    "></div>
+    <div id="pregunta">
+        <h2>¿Qué equipo ganó la UEFA Champions League en la temporada 2017-2018?</h2>
+    </div>
+    <div id="opciones">
+        <form action="/Quiz/Jugar/pregunta7" id="respuesta" method="post">
+            <textarea name="seleccion" placeholder="Equipo :)"></textarea>
+
+            <button type="submit" class="enviar">Enviar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+.contenedor {
+    border: 1px solid #ccc;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 20% 10% 50% 10%;
+    grid-template-columns: 10% 80% 10%;
+
+
+
+}
+
+.contenedor #volver, #imagen, #mensaje, #pregunta {
+    grid-column: 2/3;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#pregunta{
+    text-align: center;
+}
+
+
+.baja-puntuacion{
+    color: red;
+    font-size: 100px;
+}
+.alta-puntuacion{
+    color: green;
+    font-size: 100px;
+}
+
+
+#opciones {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#imagen {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#mensaje{
+    text-align: center;
+    font-size: 20px;
+
+}
+#volver button{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+
+}
+

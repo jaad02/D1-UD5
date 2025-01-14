@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/Elementos/Styles/tablon.css" rel="stylesheet">
+</head>
+<body>
+<div class="contenedor">
+
+    <div class="jugador" th:each="valor : ${datos}">
+
+        <h1 th:text="|[${valor.id}] Nombre: ${valor.getNombre()}|">nombre</h1>
+        <div th:text="|CR7 Points: ${valor.getPuntuacion()}|">Puntos</div>
+        <form action="/modificar">
+            <button type="submit" id="eliminar" th:value="|eliminar/${valor.id}|" name="seleccion">Eliminar</button>
+            <button type="submit" id="editar" value="editar" name="seleccion">Editar</button>
+        </form>
+    </div>
+
+</div>
+<div id="volver">
+    <a href="/">
+        <button>Volver</button>
+    </a>
+</div>
+
+</body>
+</html>

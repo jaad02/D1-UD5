@@ -1,0 +1,96 @@
+/* resultado.css */
+
+/* Fondo general */
+body {
+    background: linear-gradient(120deg, #004d98, #a50044); /* Azul y grana */
+    color: #ffffff; /* Texto blanco */
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.contenedor {
+    background: rgba(0, 0, 0, 0.85); /* Fondo negro translúcido */
+    border: 3px solid #a50044; /* Borde dorado (amarillo Barça) */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); /* Sombra fuerte */
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Títulos */
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 5px 10px #a50044, 0 -5px 10px #a50044; /* Doble sombra dorada */
+}
+
+/* Títulos según categoría */
+.baja-puntuacion {
+    color: #d9001b; /* Grana brillante */
+    font-weight: bold;
+    animation: blink 1s infinite; /* Efecto parpadeo */
+}
+
+.alta-puntuacion {
+    color: #004d98; /* Azul Barça */
+    font-weight: bold;
+    animation: pulse 2s infinite; /* Efecto latido */
+}
+
+/* Mensajes */
+#mensaje h1 {
+    margin-top: 15px;
+    padding: 10px;
+    border: 2px solid #a50044;
+    border-radius: 10px;
+    background: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-shadow: 0 0 10px #a50044, 0 0 20px #a50044; /* Efecto resplandor */
+}
+
+/* Fondo de imagen */
+#imagen {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 4s linear infinite; /* Rotación */
+}
+
+/* Botón */
+form button {
+    background: linear-gradient(90deg, #a50044, #004d98); /* Grana a azul */
+    color: #ffffff; /* Texto blanco */
+    border: 2px solid #a50044; /* Borde dorado */
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+form button:hover {
+    background: #a50044; /* Cambia a dorado al pasar el mouse */
+    color: #000000; /* Texto negro */
+    transform: scale(1.1); /* Zoom */
+}
+
+form button:active {
+    transform: scale(0.9); /* Efecto de clic */
+}
+

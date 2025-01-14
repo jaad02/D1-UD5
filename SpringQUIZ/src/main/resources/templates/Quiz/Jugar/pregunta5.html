@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/Elementos/Styles/pregunta.css">
+</head>
+
+<body>
+<div class="contenedor">
+    <div id="menu" th:with="preguntas=${session.get('pregunta')}" >
+        <div th:each="i : ${#numbers.sequence(1,preguntas+1)}" th:text="${i}" class="hecho"></div>
+        <div th:each="i : ${#numbers.sequence(preguntas+2,7)}" th:text="${i}"></div>
+
+    </div>
+    <div id="imagen" style="    background-image: url('/Elementos/Imagenes/mundial2010.png');
+    "></div>
+    <div id="pregunta">
+        <h1>¿En qué país se celebró el Mundial de Fútbol de 2010?</h1>
+    </div>
+    <div id="opciones">
+        <form id="respuesta" action="/Quiz/Jugar/pregunta6" method="post">
+
+
+
+            <button type="submit"  name="seleccion" value="Sudafrica" style="background-image:url('https://media.istockphoto.com/id/157612296/es/foto/bandera-de-sud%C3%A1frica.jpg?s=612x612&w=0&k=20&c=BAWDTppflZSC3FWACcMARboKI2YV38fTr3i2yTp9i5M=') ">Sudáfrica</button>
+            <button type="submit" name="seleccion"  value="Brasil" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/300px-Flag_of_Brazil.svg.png');">Brasil</button>
+            <button type="submit" name="seleccion"  value="Alemania" style="background-image: url('https://fieltrosolleros.com/cdn/shop/products/Alemania_d655706d-0cd5-45cb-9db4-9401a772c2a3_1080x.jpg?v=1616779088');">Alemania</button>
+            <button type="submit" name="seleccion" value="España" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/640px-Bandera_de_Espa%C3%B1a.svg.png')">España</button>
+
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

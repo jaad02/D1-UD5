@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/Elementos/Styles/pregunta.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="contenedor">
+    <div id="menu" th:with="preguntas=${session.get('pregunta')}" >
+        <div th:each="i : ${#numbers.sequence(1,preguntas+1)}" th:text="${i}" class="hecho"></div>
+        <div th:each="i : ${#numbers.sequence(preguntas+2,7)}" th:text="${i}"></div>
+
+    </div>
+    <div id="imagen" style="    background-image: url('/Elementos/Imagenes/balonDeOro.png');
+    "></div>
+    <div id="pregunta">
+        <h2>¿Cuáles de los siguientes jugadores han ganado el Balón de Oro? (Selecciona todas las opciones
+            correctas)</h2>
+    </div>
+    <div id="opciones">
+        <form action="/Quiz/Jugar/pregunta3" id="respuesta" method="post">
+
+            <div class="checkboxes">
+                <p>Luka Modrić</p>
+
+                <input name="seleccion"
+                       style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8wDYYC1sEZiJYA2Mu3CSIkLul7kyjmSRBQ&s')"
+                       type="checkbox"
+                       value="Luka"
+
+                ></input>
+            </div>
+            <div class="checkboxes">
+                <p>Neymar Jr</p>
+                <input name="seleccion" type="checkbox" value="Neymar"></input>
+            </div>
+            <div class="checkboxes">
+                <p>Zlatan Ibrahimović</p>
+                <input name="seleccion" type="checkbox" value="Zlatan"></input>
+            </div>
+            <div class="checkboxes">
+                <p>Cristiano Ronaldo</p>
+                <input name="seleccion" type="checkbox" value="CR7"></input>
+            </div>
+<button type="submit" class="enviar">Enviar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/Elementos/Styles/pregunta.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="contenedor">
+    <div id="menu" th:with="preguntas=${session.get('pregunta')}" >
+        <div th:each="i : ${#numbers.sequence(1,preguntas+1)}" th:text="${i}" class="hecho"></div>
+        <div th:each="i : ${#numbers.sequence(preguntas+2,7)}" th:text="${i}"></div>
+
+    </div>
+    <div id="imagen" style="    background-image: url('/Elementos/Imagenes/viniBalonDeOro.png');
+    "></div>
+    <div id="pregunta">
+        <h2>Escribe todos los ganadores del balon de oro del 2004 al 2016 (No los pongas repetidos y en el siguiente
+            formato:)</h2>
+    </div>
+    <div id="opciones">
+        <form action="/Quiz/Jugar/pregunta5" id="respuesta" method="post">
+            <select name="seleccion">
+                <option value="CR7">Cristiano Ronaldo</option>
+                <option value="Miroslav">Miroslav Klose</option>
+                <option value="Pele" selected>Pele</option>
+                <option value="Ronaldo">Ronaldo Nazário</option>
+            </select>
+            <button type="submit" class="enviar">Enviar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
