@@ -31,6 +31,7 @@ public class QuizController {
         if (tablon.equals("tablon")) {
             List<Jugador> jugador = db.getAll();
             model.addAttribute("datos", jugador);
+            
 
             return "Tablon";
         }
@@ -47,7 +48,14 @@ public class QuizController {
 
 
     @PostMapping("/Quiz/Jugar/pregunta2")
-    String pregunta2(@RequestParam(name = "seleccion") String seleccion, HttpSession session) {
+    String pregunta2(@RequestParam(name = "seleccion") String seleccion, HttpSession session,BindingResult b) {
+        
+        if(b.hasErrors){
+            String errorP2 = "error champion";
+            //añadelo al fuckin modelo makina
+            return "/Quiz/Jugar/pregunta1";
+        }
+        
         int puntos = CalcularResultados.CalcularResultadoP1(seleccion);
         session.setAttribute("puntuacion", (Integer) session.getAttribute("puntuacion") + puntos);
         session.setAttribute("pregunta", 1);
